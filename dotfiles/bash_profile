@@ -1,0 +1,17 @@
+## .bash_profile file
+#
+# .bash_profile is only used for login-shell,
+# so only usef for path and enviromental settings
+#
+# Jiayi Liu @ Nov 21, 2013
+
+## Import .bashrc
+if [ -f ~/.bashrc ]; then
+	source ~/.bashrc
+fi
+
+## configure PATH
+# - Lower priority first
+# $HOME/local is for local, user-specific installations.
+export PATH=$PATH
+export PATH=$HOME/local/bin:$PATH
