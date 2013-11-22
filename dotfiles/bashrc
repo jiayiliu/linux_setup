@@ -4,3 +4,37 @@
 #
 #  Jiayi Liu @ Nov 21, 2013
 
+############# Shell related ##################
+# commend history control - no duplicates
+export HISTCONTROL="ignoredups"
+# Change the command prompt format
+export PS1="@\W$>"
+# set term color
+export TERM='xterm-color'
+export CLICOLOR=true
+
+
+
+############# Command Shortcut #################
+# show cvs status for changed files
+alias cvscheck='cvs status 2>/dev/null | grep Status: | grep -v "to-date"'
+# clean hidden files
+alias clean="rm *~"
+
+
+############# Platform specific setup #######################
+case "$platform" in
+	Darwin ) # setup for Mac OS
+	alias aq='aquamacs'  # aquamac - emacs editor under Mac OS X
+
+	;;
+	Linux ) # setup for Linux
+	alias em='emacs -nw' # emacs without x11 window
+	;;
+esac
+
+############# Load local setup #################
+source .bash_local
+
+############# clean up ################
+clear

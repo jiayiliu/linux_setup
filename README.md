@@ -33,4 +33,6 @@ Other Setups
 
 	The ssh destinations need to be created separately follow the instructions under [./confssh.md]
 	
-+ 
++ VNC Setup
+
+	.vnc/xstartup
