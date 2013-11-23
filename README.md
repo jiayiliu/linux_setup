@@ -1,7 +1,7 @@
 Linux Setup Files for Personal Usage
 ====================================
 
-Based on [https://github.com/startup-class/dotfiles] and [https://github.com/startup-class/setup].
+Based on <https://github.com/startup-class/dotfiles> and <https://github.com/startup-class/setup>.
 
 Prerequisite
 ------------

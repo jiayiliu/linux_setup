@@ -5,6 +5,7 @@
 #  Jiayi Liu @ Nov 21, 2013
 
 ############# Shell related ##################
+
 # commend history control - no duplicates
 export HISTCONTROL="ignoredups"
 # Change the command prompt format
@@ -14,8 +15,8 @@ export TERM='xterm-color'
 export CLICOLOR=true
 
 
-
 ############# Command Shortcut #################
+
 # show cvs status for changed files
 alias cvscheck='cvs status 2>/dev/null | grep Status: | grep -v "to-date"'
 # clean hidden files
@@ -33,8 +34,10 @@ case "$platform" in
 	;;
 esac
 
+
 ############# Load local setup #################
-source .bash_local
+# source .bash_local
+
 
 ############# clean up ################
 clear
