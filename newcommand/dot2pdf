@@ -1,0 +1,6 @@
+#!/bin/bash
+# For graphviz dot to pdf file
+# [graphviz](http://www.graphviz.org/)
+
+dot -Tps $1.gv -o $1.ps
+ps2pdf $1.ps $1.pdf
