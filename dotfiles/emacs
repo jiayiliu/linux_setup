@@ -1,0 +1,8 @@
+;-------------- dot -----------------
+(load-file "~/.emacs.d/graphviz-dot-mode.el") 
+
+;-------------- chinese font
+(set-fontset-font
+    (frame-parameter nil 'font)
+    'han
+    (font-spec :family "Hiragino Sans GB" ))
