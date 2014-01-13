@@ -1,8 +1,28 @@
+; -*- mode: Emacs-Lisp; -*- 
 ;-------------- dot -----------------
 (load-file "~/.emacs.d/graphviz-dot-mode.el") 
 
-;-------------- chinese font
+;-------------- chinese font ----------------
 (set-fontset-font
     (frame-parameter nil 'font)
     'han
     (font-spec :family "Hiragino Sans GB" ))
+
+;-------------------- AUCTeX --------------------
+;; Fontification
+;; http://www.gnu.org/software/auctex/manual/auctex/Fontification-of-macros.html#Fontification-of-macros
+(setq font-latex-match-reference-keywords
+      '(
+	;; acronym
+	("ac" "{")
+	("acsu" "{")
+	("acl" "{")
+	("acrodef" "[{")
+	;; fancyref
+	("fref" "{")
+	)
+)
+
+;-------------- local setup ----------------
+(setq default-directory "~/")
+(find-file "~/Dropbox/2014DailyTask.org")
