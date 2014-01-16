@@ -1,6 +1,18 @@
 ; -*- mode: Emacs-Lisp; -*- 
+(add-to-list 'load-path "~/.emacs.d/")
 ;-------------- dot -----------------
 (load-file "~/.emacs.d/graphviz-dot-mode.el") 
+
+;-------------- mark-down ----------------
+;http://jblevins.org/projects/markdown-mode/
+(autoload 'markdown-mode "markdown-mode"
+    "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+;-------------- template -----------------
+;http://emacs-template.sourceforge.net/
+(require 'template)
+(template-initialize)
 
 ;-------------- chinese font ----------------
 (set-fontset-font
@@ -12,6 +24,7 @@
 ;; Fontification
 ;; http://www.gnu.org/software/auctex/manual/auctex/Fontification-of-macros.html#Fontification-of-macros
 (setq font-latex-match-reference-keywords
+
       '(
 	;; acronym
 	("ac" "{")
@@ -20,8 +33,21 @@
 	("acrodef" "[{")
 	;; fancyref
 	("fref" "{")
+	("Fref" "{")
 	)
 )
+(setq font-latex-match-warning-keywords
+      '(
+	("acresetall" "")
+	("maketitle" "")
+	)
+)
+
+;; Spelling check
+(add-hook 'LaTeX-mode-hook 'flyspell-text-modes)
+(defun flyspell-ignore-tex ()
+  (interactive)
+  (set (make-variable-buffer-local 'ispell-parser) 'tex))
 
 ;-------------- local setup ----------------
 (setq default-directory "~/")
