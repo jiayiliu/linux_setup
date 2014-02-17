@@ -55,6 +55,11 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (ac-config-default)
 
+;; ESS
+(add-to-list 'load-path "~/.emacs.d/share/emacs/site-lisp/ess")
+(load "ess-site")
+(setq ess-indent-level 2)  ; change indent width to 2 spaces according to google
+ 
 ;-------------- local setup ----------------
 (setq default-directory "~/")
 (find-file "~/Dropbox/2014DailyTask.org")
